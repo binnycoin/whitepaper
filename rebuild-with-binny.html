@@ -106,6 +106,31 @@
 <footer>
     <p>&copy; 2025 BinnyCoin. All rights reserved.</p>
 </footer>
+<script>
+    // Goal amount in dollars
+    const goalAmount = 50000;
+
+    // Funds raised (replace this value dynamically or from a data source)
+    let fundsRaised = 2500; // Example amount, update this dynamically later
+
+    // Function to update progress bar
+    function updateProgressBar(fundsRaised) {
+        // Calculate percentage
+        let percentage = (fundsRaised / goalAmount) * 100;
+
+        // Update the progress bar width and text
+        const progressBar = document.getElementById('progress-bar');
+        progressBar.style.width = percentage + '%';
+        progressBar.textContent = Math.round(percentage) + '%';
+
+        // Update the progress text
+        const progressText = document.getElementById('progress-text');
+        progressText.textContent = `Raised: $${fundsRaised.toLocaleString()} of $${goalAmount.toLocaleString()}`;
+    }
+
+    // Call the function with the current funds raised
+    updateProgressBar(fundsRaised);
+</script>
 
 </body>
 </html>
